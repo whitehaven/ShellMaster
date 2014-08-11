@@ -56,13 +56,27 @@ alias tree="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^
 alias sudo='sudo '
 
 # Shortcuts
+#-------------------------------------------------------------
+# The 'ls' family (this assumes you use a recent GNU ls).
+#-------------------------------------------------------------
+# Add colors for filetype and  human-readable sizes by default on 'ls':
+
+# The ubiquitous 'll': directories first, with alphanumeric sorting:
+alias lm='ll |more'        #  Pipe through 'more'
+alias lr='ll -R'           #  Recursive ls.
+alias la='ls -AlhF'
 alias ll='ls -lh'
-alias la='ls -lhA'
+alias ld="ls -ld"
 alias l='ls'
 alias c='clear'
 alias x='exit'
 alias q='exit'
 alias rf='rm -rf'
+alias mkdir='mkdir -pv'
+alias h='history'
+
+#Jobs
+alias j='jobs -l'
 
 # CD Assist
 alias cd..='cd ..'
@@ -91,6 +105,7 @@ alias numFiles='echo $(ls -1 | wc -l)'
 alias rm='rm -v'
 
 alias h='history'
+alias hgrep="history | grep"
 alias j='jobs -l'
 
 alias path='echo -e ${PATH//:/\\n}'
@@ -106,6 +121,20 @@ alias diff='colordiff'
 
 # Quicklook file
 ql () { qlmanage -p "$*" >& /dev/null; }
+
+# top
+alias cpu='top -o cpu'
+alias mem='top -o rsize' # memory
+
+# copy the working directory path
+alias cpwd='pwd|tr -d "\n"|pbcopy'
+
+#copy output of last command to clipboard
+alias cl="fc -e -|pbcopy"
+
+# share history between terminal sessions
+alias he="history -a" # export history
+alias hi="history -n" # import history
 
 #   ---------------------------
 #   4.  SEARCHING
