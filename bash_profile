@@ -175,7 +175,7 @@ spotlight () { mdfind "kMDItemDisplayName == '$@'wc"; }
 
 	#   cleanupLS:  Clean up LaunchServices to remove duplicates in the "Open With" menu
 	#   ---------------------------------------------------------------------------------
-    alias cleanupLS="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
+    alias cleanupOpenWith="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
 
 	#    screensaverDesktop: Run a screensaver on the Desktop
 	#   -----------------------------------------------------------------------------------
